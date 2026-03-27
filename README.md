@@ -1,6 +1,6 @@
 # FireRoute Review Artifact Package
 
-This package is intended for review/supervisory access and supports the reproducibility claims used in the FireRoute conference paper. It is not presented as a public software release; instead, it is a structured artifact package containing the code, data, scenarios, outputs, and documentation needed to inspect and replay the main paper results.
+This repository is provided as a review artifact repository accompanying the FireRoute conference paper. It is intended to support inspection and reproduction of the main paper results through the included code, data, scenarios, outputs, and documentation.
 
 ## Package contents
 - `app/` – prototype application, legacy source, core modules, and data loaders
