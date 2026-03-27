@@ -1,0 +1,4 @@
+id,lat,lon,kind,label
+POI_KU_StudentCenter,13.8487,100.5686,poi,POI_KU_StudentCenter
+POI_KU_Stadium,13.8466,100.5666,poi,POI_KU_Stadium
+POI_KU_VetHospital,13.8521,100.5661,poi,POI_KU_VetHospital

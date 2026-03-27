@@ -1,0 +1,24 @@
+{
+  "scenario_id": "blocked_e1_e2",
+  "incident_node": "E3",
+  "start_node": "HQ",
+  "dispatch_mode": "hydrant-aware",
+  "smoke_factor": 0.0,
+  "alley_factor": 0.0,
+  "blocked_edges": [
+    {
+      "a": "E1",
+      "b": "E2",
+      "kind": "alley"
+    }
+  ],
+  "incident": {
+    "id": "INC-SIM-E3-BLOCK",
+    "lat": 13.8472,
+    "lon": 100.571,
+    "people_trapped": 0,
+    "fuel_type": "Unknown",
+    "alley_constraints": "Low",
+    "panic_mode": false
+  }
+}

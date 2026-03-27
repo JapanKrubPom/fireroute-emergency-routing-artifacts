@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "required": [
+    "scenario_id",
+    "incident_node",
+    "start_node",
+    "smoke_factor",
+    "alley_factor",
+    "blocked_edges",
+    "incident"
+  ]
+}

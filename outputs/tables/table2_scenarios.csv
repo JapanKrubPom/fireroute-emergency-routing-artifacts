@@ -1,0 +1,6 @@
+scenario_id,direct_eta_s,selected_hydrant,chain_eta_s,direct_path,hydrant_path_1,hydrant_path_2
+alley_e3_10,198.7,HYD-102,198.7,HQ -> N1 -> N2 -> N3 -> N4 -> E1 -> E2 -> E3,HQ -> N1 -> N2,N2 -> N3 -> N4 -> E1 -> E2 -> E3
+baseline_e3,185.5,HYD-102,185.5,HQ -> N1 -> N2 -> N3 -> N4 -> E1 -> E2 -> E3,HQ -> N1 -> N2,N2 -> N3 -> N4 -> E1 -> E2 -> E3
+blocked_e1_e2,Infeasible,HYD-104,Infeasible,HQ -> N1 -> N2 -> N3 -> N4 -> E1 -> E2 -> E3,HQ -> N1 -> N2 -> N3 -> N4 -> E1,E1 -> E2 -> E3
+near_station_n1,34.2,HYD-102,76.6,HQ -> N1,HQ -> N1 -> N2,N2 -> N1
+smoke_e3_08,230.0,HYD-104,230.0,HQ -> N1 -> N2 -> N3 -> N4 -> E1 -> E2 -> E3,HQ -> N1 -> N2 -> N3 -> N4 -> E1,E1 -> E2 -> E3

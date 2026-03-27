@@ -1,0 +1,4 @@
+id,name,kind,node_id,status,last_ping
+FR-01,First Responder Motorbike 01,motorbike,HQ,Available,2026-03-21T23:42:39+07:00
+TR-07,Fire Truck 07,truck,W2,Available,2026-03-21T23:42:39+07:00
+TR-12,Fire Truck 12,truck,N6,Busy,2026-03-21T23:42:39+07:00

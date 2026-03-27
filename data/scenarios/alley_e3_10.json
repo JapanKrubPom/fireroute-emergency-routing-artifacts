@@ -1,0 +1,18 @@
+{
+  "scenario_id": "alley_e3_10",
+  "incident_node": "E3",
+  "start_node": "HQ",
+  "dispatch_mode": "hydrant-aware",
+  "smoke_factor": 0.0,
+  "alley_factor": 1.0,
+  "blocked_edges": [],
+  "incident": {
+    "id": "INC-SIM-E3-ALLEY",
+    "lat": 13.8472,
+    "lon": 100.571,
+    "people_trapped": 0,
+    "fuel_type": "Unknown",
+    "alley_constraints": "High",
+    "panic_mode": false
+  }
+}

@@ -1,0 +1,76 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{cite}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{balance}
+
+\urlstyle{same}
+
+\setlength{\textfloatsep}{9pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{5pt}
+\setlength{\belowcaptionskip}{2pt}
+
+\graphicspath{{./}{figures/}{outputs/figures/}}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+\title{FireRoute: Hydrant-Aware Emergency Routing and Dispatch for Campus Fire Response}
+
+
+\author{
+\IEEEauthorblockN{
+Kittisak Srimek\IEEEauthorrefmark{1}, and
+Kundjanasith Thonglek\IEEEauthorrefmark{1}}
+\IEEEauthorblockA{\IEEEauthorrefmark{1}Department of Computer Engineering, Faculty of Engineering, Kasetsart University,
+Bangkok, Thailand \\ Email: \{kittisak.srime,kundjanasith.th\}@ku.th}}
+
+
+\raggedbottom
+
+\begin{document}
+\maketitle
+
+
+\begin{abstract}
+Effective fire response requires more than shortest-path routing; it demands the integration of infrastructure constraints, environmental conditions, resource availability, and operational accountability within a unified decision-support process. Existing emergency routing approaches typically optimize travel time in isolation and lack mechanisms for explainable decision-making and post-incident governance. We present \textit{FireRoute}, a hydrant-aware emergency routing and dispatch service that models fire response as a service-level workflow rather than a standalone optimization problem. The proposed system integrates incident intake, explainable risk assessment, risk-weighted routing, hydrant-aware dispatch, responder assignment, and evidence-ready governance into a coherent architecture. A key contribution is a risk-weighted routing model that incorporates access constraints, environmental sensing, and infrastructure status, enabling operationally meaningful route selection. In addition, a hydrant-aware dispatch formulation minimizes responder--hydrant--incident travel cost under asset availability constraints, while an explainable scoring mechanism enhances operator trust in high-stakes scenarios. Scenario-based evaluation on a campus-scale testbed demonstrates that the system adapts to dynamic operational conditions. Results show that smoke exposure can increase route cost by up to 24.0\% and alter hydrant selection, while structural constraints such as alleys introduce moderate cost variations. Furthermore, the system effectively exposes network fragility under blocked conditions and supports transparent interpretation of incident priority.
+
+
+\end{abstract}
+
+
+\begin{IEEEkeywords}
+Big data services, Decision support service, Emergency response systems,  Explainable artificial intelligence, Hydrant-aware dispatch,  Risk-aware routing
+\end{IEEEkeywords}
+
+\section{Introduction}~\label{sec:introduction}
+\input{01_introduction}
+\section{RELATED WORK}~\label{sec:background}
+\input{02_background}
+\section{FireRoute}~\label{sec:methodology}
+\input{03_methodology}
+\section{Evaluation}~\label{sec:evaluation}
+\input{04_evaluation}
+\section{Conclusion}~\label{sec:conclusion}
+\input{05_conclusion}
+\section*{Reproducibility and Artifact Availability}
+\input{06_reproducibility}
+
+
+\balance
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\end{document}

@@ -1,0 +1,18 @@
+{
+  "scenario_id": "near_station_n1",
+  "incident_node": "N1",
+  "start_node": "HQ",
+  "dispatch_mode": "hydrant-aware",
+  "smoke_factor": 0.0,
+  "alley_factor": 0.0,
+  "blocked_edges": [],
+  "incident": {
+    "id": "INC-SIM-N1-NEAR",
+    "lat": 13.8509,
+    "lon": 100.5674,
+    "people_trapped": 0,
+    "fuel_type": "Unknown",
+    "alley_constraints": "Low",
+    "panic_mode": false
+  }
+}

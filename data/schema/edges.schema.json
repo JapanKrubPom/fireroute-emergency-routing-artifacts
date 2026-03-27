@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "required": [
+    "a",
+    "b",
+    "kind",
+    "width_m",
+    "turn_radius_m",
+    "one_way",
+    "gate",
+    "base_speed_kmh"
+  ]
+}

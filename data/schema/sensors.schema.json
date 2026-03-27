@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "lat",
+    "lon",
+    "smoke_ppm",
+    "co_ppm",
+    "temp_c"
+  ]
+}

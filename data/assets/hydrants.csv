@@ -1,0 +1,13 @@
+id,lat,lon,district,status,last_updated,evidence_photo
+HYD-101,13.85,100.5641,Chatuchak,WORKING,2026-03-21T23:42:39+07:00,assets/hydrant_placeholder.jpg
+HYD-102,13.8517,100.5683,Chatuchak,WORKING,2026-03-21T23:42:39+07:00,assets/hydrant_placeholder.jpg
+HYD-103,13.8507,100.5711,Chatuchak,LOW_PRESSURE,2026-03-21T23:42:39+07:00,assets/hydrant_placeholder.jpg
+HYD-104,13.8489,100.5723,Chatuchak,WORKING,2026-03-21T23:42:39+07:00,assets/hydrant_placeholder.jpg
+HYD-105,13.8474,100.5712,Chatuchak,BLOCKED,2026-03-21T23:42:39+07:00,assets/hydrant_placeholder.jpg
+HYD-106,13.8455,100.5671,Chatuchak,WORKING,2026-03-21T23:42:39+07:00,assets/hydrant_placeholder.jpg
+HYD-201,13.8492,100.5632,Chatuchak,UNKNOWN,2026-03-21T23:42:39+07:00,assets/hydrant_placeholder.jpg
+HYD-202,13.8469,100.5646,Chatuchak,WORKING,2026-03-21T23:42:39+07:00,assets/hydrant_placeholder.jpg
+HYD-203,13.8488,100.5656,Chatuchak,WORKING,2026-03-21T23:42:39+07:00,assets/hydrant_placeholder.jpg
+HYD-301,13.8522,100.5661,Chatuchak,WORKING,2026-03-21T23:42:39+07:00,assets/hydrant_placeholder.jpg
+HYD-302,13.8521,100.5701,Chatuchak,WORKING,2026-03-21T23:42:39+07:00,assets/hydrant_placeholder.jpg
+HYD-303,13.8479,100.5699,Chatuchak,WORKING,2026-03-21T23:42:39+07:00,assets/hydrant_placeholder.jpg

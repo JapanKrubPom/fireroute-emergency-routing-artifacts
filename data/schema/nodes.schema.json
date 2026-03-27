@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "lat",
+    "lon",
+    "kind"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "lat": {
+      "type": "number"
+    },
+    "lon": {
+      "type": "number"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    }
+  }
+}

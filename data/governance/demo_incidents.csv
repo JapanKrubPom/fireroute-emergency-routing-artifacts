@@ -1,0 +1,4 @@
+incident_id,reported_at,severity,type,address,lat,lon,notes
+INC-2026-0001,2026-01-20 09:05,HIGH,Electrical fire,KU Dorm Zone (Bangkhen) - near N5,13.8496,100.5702,Smoke from electrical cabinet; students evacuated; request: fastest-to-incident + nearest working hydrant
+INC-2026-0002,2026-01-20 10:40,MED,Chemical spill,Faculty of Science - Lab area (near N2),13.8518,100.5684,Small spill; needs hazmat + ventilation; keep public away; route must avoid pedestrian footpaths
+INC-2026-0003,2026-01-20 12:15,LOW,Gas leak,KU Student Center / cafeteria area (near HQ),13.8488,100.5678,Suspected LPG leak; isolate valves; standby unit; prefer shortest safe path

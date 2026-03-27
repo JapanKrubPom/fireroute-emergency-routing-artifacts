@@ -1,0 +1,76 @@
+This section presents the proposed FireRoute framework, which models emergency response as an integrated, service-level decision-support system. Unlike conventional approaches that treat routing as an isolated optimization problem, FireRoute unifies incident intake, risk assessment, routing, dispatch, and governance within a single operational workflow. The methodology is designed to incorporate heterogeneous data sources, support explainable decision-making, and enable reproducibility through structured data.
+
+
+\subsection{System Architecture}
+
+FireRoute system is organized into six interconnected layers: (i) incident intake, (ii) explainable triage, (iii) risk-weighted routing, (iv) hydrant-aware dispatch, (v) command and control actions, and (vi) evidence-ready governance. These layers operate on top of shared data abstractions, including graph, asset, sensor, incident, and governance layers, forming a unified pipeline from data ingestion to decision output.
+
+
+Our key design principle is to move beyond path computation and instead support a dispatch-relevant workflow that can be interpreted in real time and audited post hoc. Figure~\ref{fig:architecture} illustrates the interaction between these components, highlighting the integration of routing logic with environmental sensing, infrastructure state, and operational decision-making.
+
+\subsection{Data Model and Integration}
+
+The system operates on multiple heterogeneous data layers. The graph layer models the road network as a structured graph with attributes such as edge width, turn radius, and access constraints. The asset layer includes hydrants and responders, capturing operational states such as availability and functionality~\cite{P2026108912}. The sensor layer provides environmental measurements, including smoke, carbon monoxide, and temperature. The incident layer stores structured descriptors of reported events, while the governance layer records audit logs, maintenance tickets, and evidence artifacts.
+
+To ensure transparency and reproducibility, all data components are externalized as structured CSV and JSON files. This design enables routing and dispatch outcomes to be directly traced to input configurations, supporting controlled experimentation, scenario replay, and systematic validation of system behavior. Furthermore, it facilitates independent verification and extension of the system by other researchers without requiring access to the original implementation.
+
+\subsection{Operational Workflow}
+
+The FireRoute workflow begins with incident intake, where operators input structured information such as location, trapped-person count, fuel type, panic indicators, and access conditions. Based on these inputs and environmental sensor data, the system computes an explainable risk score and a dispatch-confidence estimate.
+
+Following triage, the operator can generate either a direct route or a hydrant-aware route. The system then assigns an appropriate responder based on availability and estimated travel cost. Throughout this process, infrastructure conditions (e.g., hydrant status) and environmental factors (e.g., smoke levels) are incorporated into decision-making. Finally, all actions and results are recorded in the governance layer, enabling post-incident review and accountability.
+
+\subsection{Risk-Weighted Routing Model}
+
+The road network is modeled as a graph $G=(V,E)$, where routing is performed using Dijkstra’s algorithm over an operational cost function. The baseline traversal time of an edge $e$ is defined as
+\begin{equation}
+\tau(e) = \frac{d(e)}{v(e)},
+\end{equation}
+where $d(e)$ is the geographic distance and $v(e)$ is the nominal traversal speed.
+
+To capture real-world constraints, FireRoute introduces a risk-weighted cost function:
+\begin{equation}
+C(e) = \tau(e)\,\kappa(e),
+\end{equation}
+where $\kappa(e)$ is an operational penalty multiplier. For blocked edges, infeasibility is enforced through
+\begin{equation}
+\kappa(e) = 10^9.
+\end{equation}
+Otherwise, the penalty is defined as
+\begin{equation}
+\kappa(e) = (1 + 0.25A\alpha)(1 + 0.20G)(1 + 0.05O)(1 + 0.30\sigma),
+\end{equation}
+where $A$ indicates alley segments, $\alpha$ is the alley severity factor, $G$ represents gate constraints, $O$ denotes one-way restrictions, and $\sigma$ captures environmental degradation (e.g., smoke). This formulation enables the routing model to reflect operational feasibility rather than purely geometric optimality.
+
+\subsection{Hydrant-Aware Dispatch}
+For fire operations that require water access, routing directly to the incident is not always sufficient. Let $r$ be the responder node, $i$ the incident node, and $H_W$ the set of hydrants currently marked \textit{WORKING}. FireRoute evaluates candidate hydrants using
+\begin{equation}
+h^\star=\arg\min_{h \in H_W} \left(T(r,h)+T(h,i)\right),
+\end{equation}
+where $T(x,y)$ is the risk-weighted route cost between nodes $x$ and $y$. Hydrants in other states are excluded from the candidate set. The selected hydrant is therefore not simply the nearest one on the map; it is the one that minimizes the operational chain cost under current conditions.
+
+\subsection{Explainable Risk Modeling}
+
+To enhance operator trust, FireRoute employs a transparent additive model for incident prioritization:
+\begin{equation}
+R = \operatorname{clip}(20 + 8P + F + A + 10M + E,\; 0,\; 100),
+\end{equation}
+where $P$ is the number of trapped persons, $F$ represents fuel-related risk, $A$ encodes access difficulty, $M$ indicates panic conditions, and $E$ captures environmental severity derived from sensor data. The use of interpretable components allows operators to understand and validate system recommendations in real time.
+
+\subsection{Dispatch Confidence Estimation}
+
+In addition to risk scoring, the system estimates dispatch confidence as a measure of input completeness and reliability:
+\begin{equation}
+Q = \operatorname{clip}(0.35 + c_f + m - d_p,\; 0,\; 1).
+\end{equation}
+where $c_f$ reflects completeness of report fields, $m$ denotes media or panic indicators, and $d_p$ captures duplicate-report penalties. This score provides an auxiliary signal for decision-making under uncertainty.
+
+\subsection{Evidence-Ready Governance}
+
+A distinguishing feature of FireRoute is its integration of governance into the operational workflow. The system records audit events throughout the incident lifecycle, supports maintenance ticket generation for infrastructure assets, and produces an evidence package containing routing results, hydrant states, incident descriptors, and after-action summaries.
+
+This design enables traceability, accountability, and reproducibility, transforming emergency routing from a transient decision process into a verifiable and auditable system.
+
+\subsection{Data Package and Repository Organization}
+
+The FireRoute reproducibility package externalizes the pilot graph, operational assets, scenario controls, and governance seeds into structured CSV/JSON files. This design separates data from application logic and allows routing results, table generation, and evidence artifacts to be reproduced without editing source code. The repository is organized into five main layers: \texttt{app/} for the prototype, \texttt{data/} for graph and asset files, \texttt{scripts/} for reproduction utilities, \texttt{outputs/} for generated artifacts, and \texttt{docs/} for reproducibility guidance. The graph package includes \texttt{nodes.csv} and \texttt{edges.csv}, while hydrants, sensors, and responder states are stored as standalone asset tables. Scenario files encode perturbations such as smoke, alley constraints, and blocked connectors, thereby providing explicit inputs for the evaluation cases reported in the paper.

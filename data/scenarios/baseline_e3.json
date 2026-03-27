@@ -1,0 +1,18 @@
+{
+  "scenario_id": "baseline_e3",
+  "incident_node": "E3",
+  "start_node": "HQ",
+  "dispatch_mode": "hydrant-aware",
+  "smoke_factor": 0.0,
+  "alley_factor": 0.0,
+  "blocked_edges": [],
+  "incident": {
+    "id": "INC-SIM-E3-BASE",
+    "lat": 13.8472,
+    "lon": 100.571,
+    "people_trapped": 0,
+    "fuel_type": "Unknown",
+    "alley_constraints": "Low",
+    "panic_mode": false
+  }
+}

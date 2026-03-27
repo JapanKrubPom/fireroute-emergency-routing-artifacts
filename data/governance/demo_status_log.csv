@@ -1,0 +1,5 @@
+timestamp,event,incident_id
+2026-01-20 09:08,Unit dispatched,INC-2026-0001
+2026-01-20 09:12,Hydrant check,INC-2026-0001
+2026-01-20 10:42,Safety perimeter,INC-2026-0002
+2026-01-20 12:17,Valve isolation,INC-2026-0003
